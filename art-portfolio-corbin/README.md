@@ -1,7 +1,7 @@
 
 # Art Portfolio Starter (React + Vite)
 
-A clean, component-based portfolio site for visual artists. Built with **React** and **Vite**, inspired by minimalist layouts (similar spirit to melokwo.com), and kept intentionally plain so you can style later.
+A clean, component-based portfolio site for visual artists. Built with **React** and **Vite**, inspired by minimalist layouts, and kept intentionally plain so you can style later.
 
 ## ✨ Features
 - Simple pages: **Home**, **Gallery**, **About**, **Contact**
@@ -71,10 +71,5 @@ npm run preview
 ├── vite.config.js
 └── README.md
 ```
-
-## 🛠️ Optional ideas
-- Add a lightbox modal for viewing images larger.
-- Add categories/filters (e.g., Paintings, Sketches, Photography).
-- Wire a contact form to a service like Formspree or a tiny server.
 
 MIT License.

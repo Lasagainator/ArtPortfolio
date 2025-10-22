@@ -1,0 +1,291 @@
+[
+  {
+    "id": "1",
+    "title": "Untitled I",
+    "year": "2024",
+    "medium": "Oil on canvas",
+    "size": "18 × 24 in",
+    "image": "/Website/DigitalArt/4.jpg",
+    "exhibit": "Digital Art"
+  },
+  {
+    "id": "2",
+    "title": "Untitled II",
+    "year": "2024",
+    "medium": "Acrylic on panel",
+    "size": "16 × 20 in",
+    "image": "/Website/DigitalArt/5.jpg",
+    "exhibit": "Digital Art"
+  },
+  {
+    "id": "3",
+    "title": "Untitled III",
+    "year": "2023",
+    "medium": "Charcoal on paper",
+    "size": "11 × 14 in",
+    "image": "/Website/DigitalArt/6.jpg",
+    "exhibit": "Digital Art"
+  },
+  {
+    "id": "4",
+    "title": "Untitled IV",
+    "year": "2025",
+    "medium": "Mixed media",
+    "size": "24 × 36 in",
+    "image": "/Website/DigitalArt/7.jpg",
+     "exhibit": "Digital Art"
+  },
+  {
+    "id": "5",
+    "title": "Untitled V",
+    "year": "2022",
+    "medium": "Photograph",
+    "size": "3000 × 2000 px",
+    "image": "/Website/DigitalArt/8.jpg",
+    "exhibit": "Digital Art"
+  },
+  {
+    "id": "6",
+    "title": "Untitled VI",
+    "year": "2021",
+    "medium": "Digital",
+    "size": "1920 × 1080 px",
+    "image": "/Website/DigitalArt/9.png",
+    "exhibit": "Digital Art"
+  },
+  {
+    "id": "7",
+    "title": "Untitled VII",
+    "year": "",
+    "medium": "",
+    "size": "",
+    "image": "/Website/DigitalArt/art project.jpg",
+    "exhibit": "Digital Art"
+  },
+  {
+    "id": "8",
+    "title": "Untitled VIII",
+    "year": "",
+    "medium": "",
+    "size": "",
+    "image": "/Website/DigitalArt/skdetch color.jpg",
+    "exhibit": "Digital Art"
+  },
+  {
+    "id": "9",
+    "title": "Untitled",
+    "year": "",
+    "medium": "",
+    "size": "",
+    "image": "/Website/Edits/Blackburn_Corbin_Collage 01.jpg",
+    "exhibit": "Edits"
+  },
+  {
+    "id": "10",
+    "title": "Untitled",
+    "year": "",
+    "medium": "",
+    "size": "",
+    "image": "/Website/Edits/houkagoteatimeVOL2.jpg",
+    "exhibit": "Edits"
+  },
+  {
+    "id": "11",
+    "title": "Untitled",
+    "year": "",
+    "medium": "",
+    "size": "",
+    "image": "/Website/Posters/Complementary Opposites.jpg",
+    "exhibit": "Posters"
+  },
+  {
+    "id": "12",
+    "title": "Untitled",
+    "year": "",
+    "medium": "",
+    "size": "",
+    "image": "/Website/Posters/Fender Mustang final poster-01.jpg",
+    "exhibit": "Posters"
+  },
+  {
+    "id": "13",
+    "title": "Untitled",
+    "year": "",
+    "medium": "",
+    "size": "",
+    "image": "/Website/Posters/KillEmAllVector.jpg",
+    "exhibit": "Posters"
+  },
+  {
+    "id": "15",
+    "title": "Untitled",
+    "year": "",
+    "medium": "",
+    "size": "",
+    "image": "/Website/Posters/midwest poster.jpg",
+    "exhibit": "Posters"
+  },
+  {
+    "id": "16",
+    "title": "Untitled",
+    "year": "",
+    "medium": "",
+    "size": "",
+    "image": "/Website/Posters/Mtndewit yourself.jpg",
+    "exhibit": "Posters"
+  },
+  {
+    "id": "17",
+    "title": "Untitled",
+    "year": "",
+    "medium": "",
+    "size": "",
+    "image": "/Website/Posters/PSA_Final.jpg",
+    "exhibit": "Posters"
+  },
+  {
+    "id": "18",
+    "title": "Untitled",
+    "year": "",
+    "medium": "",
+    "size": "",
+    "image": "/Website/Posters/Ravens Poster.jpg",
+    "exhibit": "Posters"
+  },
+  {
+    "id": "19",
+    "title": "Untitled",
+    "year": "",
+    "medium": "",
+    "size": "",
+    "image": "/Website/Posters/section 7.jpg",
+    "exhibit": "Posters"
+  },
+  {
+    "id": "20",
+    "title": "Untitled",
+    "year": "",
+    "medium": "",
+    "size": "",
+    "image": "/Website/Posters/Type II poster Final.jpg",
+    "exhibit": "Posters"
+  },
+  {
+    "id": "21",
+    "title": "Untitled",
+    "year": "",
+    "medium": "",
+    "size": "",
+    "image": "/Website/TraditionalArt/Tri/1.jpg",
+    "exhibit": "Traditional Art"
+  },
+  {
+    "id": "22",
+    "title": "Untitled",
+    "year": "",
+    "medium": "",
+    "size": "",
+    "image": "/Website/TraditionalArt/Tri/2.jpg",
+    "exhibit": "Traditional Art"
+  },
+  {
+    "id": "23",
+    "title": "Untitled",
+    "year": "",
+    "medium": "",
+    "size": "",
+    "image": "/Website/TraditionalArt/Tri/3.jpg",
+    "exhibit": "Traditional Art"
+  },
+  {
+    "id": "24",
+    "title": "Untitled",
+    "year": "",
+    "medium": "",
+    "size": "",
+    "image": "/Website/TraditionalArt/Tri/set.jpg",
+    "exhibit": "Traditional Art"
+  },
+  {
+    "id": "25",
+    "title": "Untitled",
+    "year": "",
+    "medium": "",
+    "size": "",
+    "image": "/Website/TraditionalArt/11.jpg",
+    "exhibit": "Traditional Art"
+  },
+  {
+    "id": "26",
+    "title": "Untitled",
+    "year": "",
+    "medium": "",
+    "size": "",
+    "image": "/Website/TraditionalArt/12.jpg",
+    "exhibit": "Traditional Art"
+  },
+  {
+    "id": "26",
+    "title": "Untitled",
+    "year": "",
+    "medium": "",
+    "size": "",
+    "image": "/Website/TraditionalArt/apple.jpg",
+    "exhibit": "Traditional Art"
+  },
+  {
+    "id": "27",
+    "title": "Untitled",
+    "year": "",
+    "medium": "",
+    "size": "",
+    "image": "/Website/TraditionalArt/still life 3.jpg",
+    "exhibit": "Traditional Art"
+  },
+  {
+    "id": "28",
+    "title": "Untitled",
+    "year": "",
+    "medium": "",
+    "size": "",
+    "image": "/Website/TraditionalArt/still life painting.jpg",
+    "exhibit": "Traditional Art"
+  },
+  {
+    "id": "29",
+    "title": "Untitled",
+    "year": "",
+    "medium": "",
+    "size": "",
+    "image": "/Website/TraditionalArt/Still life.jpg",
+    "exhibit": "Traditional Art"
+  },
+  {
+    "id": "30",
+    "title": "Untitled",
+    "year": "",
+    "medium": "",
+    "size": "",
+    "image": "/Website/VideoProject/TWStopMotion.mp4",
+    "exhibit": "Video Projects"
+  },
+  {
+    "id": "31",
+    "title": "Untitled",
+    "year": "",
+    "medium": "",
+    "size": "",
+    "image": "/Website/VideoProject/Video.mov",
+    "exhibit": "Video Projects"
+  },
+  {
+    "id": "32",
+    "title": "Untitled",
+    "year": "",
+    "medium": "",
+    "size": "",
+    "image": "/Website/VideoProject/GD intro final2.mp4",
+    "exhibit": "Video Projects"
+  }
+  
+]

@@ -1,0 +1,130 @@
+import React from 'react'
+import { useLightbox } from './Lightbox.jsx'
+
+const VIDEO_EXT_REGEX = /\.(mp4|mov)$/i
+
+// Helper: detect YouTube URL
+const isYouTubeUrl = (s) =>
+  /^(https?:)?\/\/(www\.)?(youtube\.com|youtu\.be)\//i.test(s || '')
+
+// Helper: extract YouTube video ID
+function getYouTubeId(url = '') {
+  try {
+    const u = new URL(url, 'https://dummy.base')
+    // youtu.be/<id>
+    if (/youtu\.be$/i.test(u.hostname)) {
+      return u.pathname.slice(1)
+    }
+    // youtube.com/watch?v=<id>
+    if (/youtube\.com$/i.test(u.hostname)) {
+      if (u.pathname.startsWith('/watch')) return u.searchParams.get('v')
+      // youtube.com/shorts/<id>
+      if (u.pathname.startsWith('/shorts/')) return u.pathname.split('/')[2]
+      // youtube.com/embed/<id>
+      if (u.pathname.startsWith('/embed/')) return u.pathname.split('/')[2]
+    }
+  } catch {}
+  return null
+}
+
+export default function ArtworkCard({ artwork }) {
+  const ctx = useLightbox()
+  const open = ctx && ctx.open
+
+  const src = artwork.image
+  const youTubeUrl = artwork.youtube || (isYouTubeUrl(src) ? src : null)
+  const youTubeId = youTubeUrl ? getYouTubeId(youTubeUrl) : null
+  const isYouTube = Boolean(youTubeId)
+  const isVideoFile = typeof src === 'string' && VIDEO_EXT_REGEX.test(src || '')
+
+  const mimeType = 'video/mp4'
+
+  const handleOpen = (e) => {
+    e.preventDefault()
+    if (!open) {
+      if (process.env.NODE_ENV !== 'production') {
+        console.warn('LightboxProvider missing: wrap app with <LightboxProvider>.')
+      }
+      return
+    }
+    if (src) open(artwork)
+  }
+
+  const interactiveProps = {
+    onClick: handleOpen,
+    onKeyDown: (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault()
+        handleOpen(e)
+      }
+    },
+    role: 'button',
+    tabIndex: 0,
+    'aria-label': `View larger: ${artwork.title || 'Artwork'}`
+  }
+
+  const embedUrl = isYouTube
+    ? `https://www.youtube-nocookie.com/embed/${youTubeId}?rel=0&modestbranding=1`
+    : null
+
+  return (
+    <article className="card col-4 col-12">
+      <div
+        className="artwork-clickable"
+        {...(!isYouTube ? interactiveProps : {})}
+      >
+        {isYouTube ? (
+          <div
+            style={{
+              position: 'relative',
+              width: '100%',
+              paddingTop: '56.25%',
+              background: '#000',
+              borderBottom: '1px solid var(--border)'
+            }}
+          >
+            <iframe
+              title={artwork.title || 'YouTube video'}
+              src={embedUrl}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              style={{
+                position: 'absolute',
+                inset: 0,
+                width: '100%',
+                height: '100%',
+                border: 0,
+                display: 'block'
+              }}
+            />
+          </div>
+        ) : isVideoFile ? (
+          <video
+            className="artwork-media"
+            controls
+            playsInline
+            preload="metadata"
+            poster={artwork.poster}
+          >
+            <source src={src} type={mimeType} />
+          </video>
+        ) : (
+          <img
+            className="artwork-media"
+            src={src}
+            alt={artwork.title || 'Artwork'}
+            loading="lazy"
+          />
+        )}
+      </div>
+      <div className="card-body">
+        <h3 className="card-title">{artwork.title}</h3>
+        <div className="card-meta">
+          {artwork.year ? artwork.year : ''}
+          {artwork.medium ? (artwork.year ? ' • ' : '') + artwork.medium : ''}
+          {artwork.size ? ' • ' + artwork.size : ''}
+        </div>
+      </div>
+    </article>
+  )
+}

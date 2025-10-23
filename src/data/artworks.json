@@ -261,30 +261,12 @@
     "exhibit": "Traditional Art"
   },
   {
-    "id": "30",
-    "title": "Untitled",
-    "year": "",
-    "medium": "",
-    "size": "",
-    "image": "/Website/VideoProject/TWStopMotion.mp4",
-    "exhibit": "Video Projects"
-  },
-  {
-    "id": "31",
-    "title": "Untitled",
-    "year": "",
-    "medium": "",
-    "size": "",
-    "image": "/Website/VideoProject/Video.mov",
-    "exhibit": "Video Projects"
-  },
-  {
     "id": "32",
-    "title": "Untitled",
+    "title": "TW Stop Motion Final",
     "year": "",
-    "medium": "",
+    "medium": "Video",
     "size": "",
-    "image": "/Website/VideoProject/GD intro final2.mp4",
+    "youtube": "https://www.youtube.com/watch?v=kTU60AWDOF0",
     "exhibit": "Video Projects"
   }
   

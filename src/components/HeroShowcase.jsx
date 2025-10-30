@@ -12,6 +12,7 @@ function shuffle(arr) {
 }
 
 const VIDEO_EXT_REGEX = /\.(mp4|webm|mov|m4v|ogg)$/i
+const withBase = (p) => /^https?:\/\//i.test(p || '') ? p : `${import.meta.env.BASE_URL}${(p || '').replace(/^\//,'')}`
 
 export default function HeroShowcase() {
   const selection = useMemo(() => {
@@ -39,7 +40,7 @@ export default function HeroShowcase() {
             <figure key={(art.id || 'art') + '-' + i} className="showcase-item">
               <img
                 className="showcase-media"
-                src={art.image}
+                src={withBase(art.image)}
                 alt={art.title || 'Artwork'}
                 loading="lazy"
               />

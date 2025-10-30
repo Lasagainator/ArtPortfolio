@@ -11,43 +11,40 @@ const isYouTubeUrl = (s) =>
 function getYouTubeId(url = '') {
   try {
     const u = new URL(url, 'https://dummy.base')
-    // youtu.be/<id>
-    if (/youtu\.be$/i.test(u.hostname)) {
-      return u.pathname.slice(1)
-    }
-    // youtube.com/watch?v=<id>
+    if (/youtu\.be$/i.test(u.hostname)) return u.pathname.slice(1)
     if (/youtube\.com$/i.test(u.hostname)) {
       if (u.pathname.startsWith('/watch')) return u.searchParams.get('v')
-      // youtube.com/shorts/<id>
       if (u.pathname.startsWith('/shorts/')) return u.pathname.split('/')[2]
-      // youtube.com/embed/<id>
       if (u.pathname.startsWith('/embed/')) return u.pathname.split('/')[2]
     }
   } catch {}
   return null
 }
 
+// Prefix local asset paths with Vite base (works under /REPO_NAME/)
+const withBase = (p) => {
+  if (!p) return p
+  if (/^https?:\/\//i.test(p)) return p
+  return `${import.meta.env.BASE_URL}${p.replace(/^\//, '')}`
+}
+
 export default function ArtworkCard({ artwork }) {
   const ctx = useLightbox()
   const open = ctx && ctx.open
 
-  const src = artwork.image
-  const youTubeUrl = artwork.youtube || (isYouTubeUrl(src) ? src : null)
+  const raw = artwork.image
+  const src = withBase(raw)
+  const youTubeUrl = artwork.youtube || (isYouTubeUrl(raw) ? raw : null)
   const youTubeId = youTubeUrl ? getYouTubeId(youTubeUrl) : null
   const isYouTube = Boolean(youTubeId)
-  const isVideoFile = typeof src === 'string' && VIDEO_EXT_REGEX.test(src || '')
+  const isVideoFile = typeof raw === 'string' && VIDEO_EXT_REGEX.test(raw || '')
 
   const mimeType = 'video/mp4'
 
   const handleOpen = (e) => {
     e.preventDefault()
-    if (!open) {
-      if (process.env.NODE_ENV !== 'production') {
-        console.warn('LightboxProvider missing: wrap app with <LightboxProvider>.')
-      }
-      return
-    }
-    if (src) open(artwork)
+    if (!open) return
+    if (raw) open(artwork)
   }
 
   const interactiveProps = {
@@ -104,7 +101,7 @@ export default function ArtworkCard({ artwork }) {
             controls
             playsInline
             preload="metadata"
-            poster={artwork.poster}
+            poster={artwork.poster ? withBase(artwork.poster) : undefined}
           >
             <source src={src} type={mimeType} />
           </video>

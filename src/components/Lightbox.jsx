@@ -8,10 +8,10 @@ import React, {
 } from 'react'
 
 const Ctx = createContext(null)
+const withBase = (p) => /^https?:\/\//i.test(p || '') ? p : `${import.meta.env.BASE_URL}${(p || '').replace(/^\//,'')}`
 
 export function LightboxProvider({ children }) {
   const [item, setItem] = useState(null)
-  // mode: 'natural' | 'zoom'
   const [mode, setMode] = useState('natural')
   const wrapperRef = useRef(null)
   const imgRef = useRef(null)
@@ -32,12 +32,10 @@ export function LightboxProvider({ children }) {
     setMode(m => (m === 'natural' ? 'zoom' : 'natural'))
   }, [])
 
-  // Capture natural dimensions once image loads
   const onImgLoad = () => {
     const img = imgRef.current
     if (img) {
       setNaturalSize({ w: img.naturalWidth, h: img.naturalHeight })
-      // Center scroll after load in natural mode
       requestAnimationFrame(() => {
         const wrap = wrapperRef.current
         if (wrap) {
@@ -48,7 +46,6 @@ export function LightboxProvider({ children }) {
     }
   }
 
-  // Keyboard support
   useEffect(() => {
     if (!item) return
     const onKey = (e) => {
@@ -68,7 +65,6 @@ export function LightboxProvider({ children }) {
     return () => window.removeEventListener('keydown', onKey)
   }, [item, mode, close, toggleMode])
 
-  // Drag-to-pan in either mode (useful for very large or zoomed)
   useEffect(() => {
     const w = wrapperRef.current
     if (!w) return
@@ -106,20 +102,19 @@ export function LightboxProvider({ children }) {
     }
   }, [mode])
 
-  // Compute scale for zoom mode (adaptive so it meaningfully enlarges but not absurd)
   const scale = (() => {
     const { w, h } = naturalSize
     if (!w || !h) return 1.8
-    // Base target dimension relative to viewport
     const vw = window.innerWidth
     const vh = window.innerHeight
-    // Ensure scaled dimension is at least 1.4x bigger than fit-to-viewport smaller side
-    const fitRatio = Math.min(vw / w, (vh - 120) / h) // leave some caption space
+    const fitRatio = Math.min(vw / w, (vh - 120) / h)
     const base = fitRatio * 1.4
-    //If natural already larger than viewport, just modest extra magnification
     if (fitRatio < 1) return Math.min(2.2, Math.max(1.25, 1.35))
     return Math.min(2.5, Math.max(1.5, base))
   })()
+
+  const isVideo = (/\.(mp4|mov|webm|m4v|ogg)$/i).test(item?.image || '')
+  const mediaSrc = withBase(item?.full || item?.image || '')
 
   return (
     <Ctx.Provider value={{ open, close }}>
@@ -145,10 +140,10 @@ export function LightboxProvider({ children }) {
               ×
             </button>
 
-            {(/\.(mp4|mov|webm|m4v|ogg)$/i).test(item.image || '') ? (
+            {isVideo ? (
               <video
                 className="lightbox-media-video"
-                src={item.image}
+                src={mediaSrc}
                 controls
                 autoPlay
                 playsInline
@@ -162,7 +157,7 @@ export function LightboxProvider({ children }) {
                 <img
                   ref={imgRef}
                   className={`lb-image ${mode}`}
-                  src={item.full || item.image}
+                  src={mediaSrc}
                   alt={item.title || 'Artwork'}
                   draggable={false}
                   onLoad={onImgLoad}

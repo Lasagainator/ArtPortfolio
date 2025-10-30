@@ -5,7 +5,7 @@
     "year": "2024",
     "medium": "Oil on canvas",
     "size": "18 × 24 in",
-    "image": "/Website/DigitalArt/4.jpg",
+    "image": "/assets/Website/DigitalArt/4.jpg",
     "exhibit": "Digital Art"
   },
   {
@@ -14,7 +14,7 @@
     "year": "2024",
     "medium": "Acrylic on panel",
     "size": "16 × 20 in",
-    "image": "/Website/DigitalArt/5.jpg",
+    "image": "/assets/Website/DigitalArt/5.jpg",
     "exhibit": "Digital Art"
   },
   {
@@ -23,7 +23,7 @@
     "year": "2023",
     "medium": "Charcoal on paper",
     "size": "11 × 14 in",
-    "image": "/Website/DigitalArt/6.jpg",
+    "image": "/assets/Website/DigitalArt/6.jpg",
     "exhibit": "Digital Art"
   },
   {
@@ -32,8 +32,8 @@
     "year": "2025",
     "medium": "Mixed media",
     "size": "24 × 36 in",
-    "image": "/Website/DigitalArt/7.jpg",
-     "exhibit": "Digital Art"
+    "image": "/assets/Website/DigitalArt/7.jpg",
+    "exhibit": "Digital Art"
   },
   {
     "id": "5",
@@ -41,7 +41,7 @@
     "year": "2022",
     "medium": "Photograph",
     "size": "3000 × 2000 px",
-    "image": "/Website/DigitalArt/8.jpg",
+    "image": "/assets/Website/DigitalArt/8.jpg",
     "exhibit": "Digital Art"
   },
   {
@@ -50,7 +50,7 @@
     "year": "2021",
     "medium": "Digital",
     "size": "1920 × 1080 px",
-    "image": "/Website/DigitalArt/9.png",
+    "image": "/assets/Website/DigitalArt/9.png",
     "exhibit": "Digital Art"
   },
   {
@@ -59,7 +59,7 @@
     "year": "",
     "medium": "",
     "size": "",
-    "image": "/Website/DigitalArt/art project.jpg",
+    "image": "/assets/Website/DigitalArt/art project.jpg",
     "exhibit": "Digital Art"
   },
   {
@@ -68,7 +68,7 @@
     "year": "",
     "medium": "",
     "size": "",
-    "image": "/Website/DigitalArt/skdetch color.jpg",
+    "image": "/assets/Website/DigitalArt/skdetch color.jpg",
     "exhibit": "Digital Art"
   },
   {
@@ -77,7 +77,7 @@
     "year": "",
     "medium": "",
     "size": "",
-    "image": "/Website/Edits/Blackburn_Corbin_Collage 01.jpg",
+    "image": "/assets/Website/Edits/Blackburn_Corbin_Collage 01.jpg",
     "exhibit": "Edits"
   },
   {
@@ -86,7 +86,7 @@
     "year": "",
     "medium": "",
     "size": "",
-    "image": "/Website/Edits/houkagoteatimeVOL2.jpg",
+    "image": "/assets/Website/Edits/houkagoteatimeVOL2.jpg",
     "exhibit": "Edits"
   },
   {
@@ -95,7 +95,7 @@
     "year": "",
     "medium": "",
     "size": "",
-    "image": "/Website/Posters/Complementary Opposites.jpg",
+    "image": "/assets/Website/Posters/Complementary Opposites.jpg",
     "exhibit": "Posters"
   },
   {
@@ -104,7 +104,7 @@
     "year": "",
     "medium": "",
     "size": "",
-    "image": "/Website/Posters/Fender Mustang final poster-01.jpg",
+    "image": "/assets/Website/Posters/Fender Mustang final poster-01.jpg",
     "exhibit": "Posters"
   },
   {
@@ -113,7 +113,7 @@
     "year": "",
     "medium": "",
     "size": "",
-    "image": "/Website/Posters/KillEmAllVector.jpg",
+    "image": "/assets/Website/Posters/KillEmAllVector.jpg",
     "exhibit": "Posters"
   },
   {
@@ -122,7 +122,7 @@
     "year": "",
     "medium": "",
     "size": "",
-    "image": "/Website/Posters/midwest poster.jpg",
+    "image": "/assets/Website/Posters/midwest poster.jpg",
     "exhibit": "Posters"
   },
   {
@@ -131,7 +131,7 @@
     "year": "",
     "medium": "",
     "size": "",
-    "image": "/Website/Posters/Mtndewit yourself.jpg",
+    "image": "/assets/Website/Posters/Mtndewit yourself.jpg",
     "exhibit": "Posters"
   },
   {
@@ -140,7 +140,7 @@
     "year": "",
     "medium": "",
     "size": "",
-    "image": "/Website/Posters/PSA_Final.jpg",
+    "image": "/assets/Website/Posters/PSA_Final.jpg",
     "exhibit": "Posters"
   },
   {
@@ -149,7 +149,7 @@
     "year": "",
     "medium": "",
     "size": "",
-    "image": "/Website/Posters/Ravens Poster.jpg",
+    "image": "/assets/Website/Posters/Ravens Poster.jpg",
     "exhibit": "Posters"
   },
   {
@@ -158,7 +158,7 @@
     "year": "",
     "medium": "",
     "size": "",
-    "image": "/Website/Posters/section 7.jpg",
+    "image": "/assets/Website/Posters/section 7.jpg",
     "exhibit": "Posters"
   },
   {
@@ -167,7 +167,7 @@
     "year": "",
     "medium": "",
     "size": "",
-    "image": "/Website/Posters/Type II poster Final.jpg",
+    "image": "/assets/Website/Posters/Type II poster Final.jpg",
     "exhibit": "Posters"
   },
   {
@@ -176,7 +176,7 @@
     "year": "",
     "medium": "",
     "size": "",
-    "image": "/Website/TraditionalArt/Tri/1.jpg",
+    "image": "/assets/Website/TraditionalArt/Tri/1.jpg",
     "exhibit": "Traditional Art"
   },
   {
@@ -185,7 +185,7 @@
     "year": "",
     "medium": "",
     "size": "",
-    "image": "/Website/TraditionalArt/Tri/2.jpg",
+    "image": "/assets/Website/TraditionalArt/Tri/2.jpg",
     "exhibit": "Traditional Art"
   },
   {
@@ -194,7 +194,7 @@
     "year": "",
     "medium": "",
     "size": "",
-    "image": "/Website/TraditionalArt/Tri/3.jpg",
+    "image": "/assets/Website/TraditionalArt/Tri/3.jpg",
     "exhibit": "Traditional Art"
   },
   {
@@ -203,7 +203,7 @@
     "year": "",
     "medium": "",
     "size": "",
-    "image": "/Website/TraditionalArt/Tri/set.jpg",
+    "image": "/assets/Website/TraditionalArt/Tri/set.jpg",
     "exhibit": "Traditional Art"
   },
   {
@@ -212,7 +212,7 @@
     "year": "",
     "medium": "",
     "size": "",
-    "image": "/Website/TraditionalArt/11.jpg",
+    "image": "/assets/Website/TraditionalArt/11.jpg",
     "exhibit": "Traditional Art"
   },
   {
@@ -221,7 +221,7 @@
     "year": "",
     "medium": "",
     "size": "",
-    "image": "/Website/TraditionalArt/12.jpg",
+    "image": "/assets/Website/TraditionalArt/12.jpg",
     "exhibit": "Traditional Art"
   },
   {
@@ -230,7 +230,7 @@
     "year": "",
     "medium": "",
     "size": "",
-    "image": "/Website/TraditionalArt/apple.jpg",
+    "image": "/assets/Website/TraditionalArt/apple.jpg",
     "exhibit": "Traditional Art"
   },
   {
@@ -239,7 +239,7 @@
     "year": "",
     "medium": "",
     "size": "",
-    "image": "/Website/TraditionalArt/still life 3.jpg",
+    "image": "/assets/Website/TraditionalArt/still life 3.jpg",
     "exhibit": "Traditional Art"
   },
   {
@@ -248,7 +248,7 @@
     "year": "",
     "medium": "",
     "size": "",
-    "image": "/Website/TraditionalArt/still life painting.jpg",
+    "image": "/assets/Website/TraditionalArt/still life painting.jpg",
     "exhibit": "Traditional Art"
   },
   {
@@ -257,7 +257,7 @@
     "year": "",
     "medium": "",
     "size": "",
-    "image": "/Website/TraditionalArt/Still life.jpg",
+    "image": "/assets/Website/TraditionalArt/Still life.jpg",
     "exhibit": "Traditional Art"
   },
   {
@@ -269,5 +269,4 @@
     "youtube": "https://www.youtube.com/watch?v=kTU60AWDOF0",
     "exhibit": "Video Projects"
   }
-  
 ]

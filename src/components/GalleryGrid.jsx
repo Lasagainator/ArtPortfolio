@@ -88,9 +88,11 @@ export default function GalleryGrid({ items = [], exhibits }) {
               className="exhibit-panel"
             >
               <div className="grid">
-                {exhibit.artworks.map(art => (
-                  <ArtworkCard key={art.id} artwork={art} />
-                ))}
+                {exhibit.artworks.map((art, idx) => {
+                  const stableMedia = art.image || art.youtube || ''
+                  const key = art.id ? `${art.id}-${stableMedia}` : (stableMedia || `idx-${idx}`)
+                  return <ArtworkCard key={key} artwork={art} />
+                })}
               </div>
             </div>
           </div>

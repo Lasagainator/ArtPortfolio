@@ -1,5 +1,6 @@
 import React from 'react'
 import { useLightbox } from './Lightbox.jsx'
+import { useDetailCard } from './DetailCard.jsx'
 
 const VIDEO_EXT_REGEX = /\.(mp4|mov)$/i
 
@@ -30,6 +31,7 @@ const withBase = (p) => {
 
 export default function ArtworkCard({ artwork }) {
   const ctx = useLightbox()
+  const detail = useDetailCard()
   const open = ctx && ctx.open
 
   const raw = artwork.image
@@ -43,8 +45,13 @@ export default function ArtworkCard({ artwork }) {
 
   const handleOpen = (e) => {
     e.preventDefault()
-    if (!open) return
-    if (raw) open(artwork)
+    // Image -> open detail card; Video/YouTube keep current behavior
+    if (isYouTube) return
+    if (isVideoFile) {
+      if (open) open(artwork)
+      return
+    }
+    if (detail && detail.open) detail.open(artwork)
   }
 
   const interactiveProps = {

@@ -8,7 +8,7 @@ export default function Navbar() {
   return (
     <header className="nav">
       <div className="container nav-inner">
-        <div style={{fontWeight:700}}>Corbin "Him" Blackburn</div>
+        <div style={{fontWeight:700}}>Corbin Blackburn</div>
         <nav>
           <NavLink to="/" className={linkClass} end>Home</NavLink>
           <NavLink to="/gallery" className={linkClass}>Gallery</NavLink>

@@ -26,18 +26,7 @@ export default function GalleryGrid({ items = [], exhibits }) {
     return Object.values(groups)
   }, [items, exhibits])
 
-  const [openMap, setOpenMap] = useState({})
-
-  useEffect(() => {
-    const next = {}
-    // Start all exhibits closed
-    normalizedExhibits.forEach(ex => { next[ex.id] = false })
-    setOpenMap(next)
-  }, [normalizedExhibits])
-
-  const toggleExhibit = (id) => {
-    setOpenMap(m => ({ ...m, [id]: !m[id] }))
-  }
+  // No toggles; exhibits are always visible with masonry tiling
 
   if (!normalizedExhibits.length) {
     return (
@@ -50,50 +39,15 @@ export default function GalleryGrid({ items = [], exhibits }) {
   return (
     <section className="gallery-grid exhibits">
       {normalizedExhibits.map(exhibit => {
-        const isOpen = openMap[exhibit.id]
         return (
           <div key={exhibit.id} className="exhibit">
-            <button
-              type="button"
-              className={`exhibit-toggle heading-toggle ${isOpen ? 'open' : ''}`}
-              aria-expanded={isOpen}
-              aria-controls={`exhibit-panel-${exhibit.id}`}
-              onClick={() => toggleExhibit(exhibit.id)}
-            >
-              <span className="exhibit-title">{exhibit.title}</span>
-              <span className="exhibit-arrow" aria-hidden="true">
-                <svg
-                  className="arrow-icon"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  focusable="false"
-                >
-                  <path
-                    d="M6 9l6 6 6-6"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </span>
-            </button>
-            <div
-              id={`exhibit-panel-${exhibit.id}`}
-              role="region"
-              aria-label={exhibit.title}
-              hidden={!isOpen}
-              className="exhibit-panel"
-            >
-              <div className="grid">
-                {exhibit.artworks.map((art, idx) => {
-                  const stableMedia = art.image || art.youtube || ''
-                  const key = art.id ? `${art.id}-${stableMedia}` : (stableMedia || `idx-${idx}`)
-                  return <ArtworkCard key={key} artwork={art} />
-                })}
-              </div>
+            <h2 className="exhibit-title" id={`exhibit-${exhibit.id}`}>{exhibit.title}</h2>
+            <div className="masonry" role="group" aria-labelledby={`exhibit-${exhibit.id}`}>
+              {exhibit.artworks.map((art, idx) => {
+                const stableMedia = art.image || art.youtube || ''
+                const key = art.id ? `${art.id}-${stableMedia}` : (stableMedia || `idx-${idx}`)
+                return <ArtworkCard key={key} artwork={art} variant="tile" />
+              })}
             </div>
           </div>
         )

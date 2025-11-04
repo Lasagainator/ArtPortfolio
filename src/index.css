@@ -115,6 +115,41 @@ img { max-width: 100%; display: block; }
   margin: 2rem 0 3rem;
 }
 
+/* Masonry layout */
+.masonry {
+  column-width: 280px; /* target tile width; browser computes column count */
+  column-gap: 1rem;
+}
+
+@media (max-width: 480px) {
+  .masonry { column-width: 190px; }
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin: 0 0 1rem 0;
+}
+
+.masonry-tile .artwork-clickable {
+  display: block;
+}
+
+.masonry-tile .artwork-media,
+.masonry-tile iframe {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #f8f8f8;
+}
+
+/* Remove default card styling for tile variant */
+.masonry-tile .card-body,
+.masonry-tile .card,
+.masonry-tile .col-4,
+.masonry-tile .col-12 { all: unset; }
+
 /* Exhibit (header-style dropdown) */
 .exhibit { margin-bottom: 2rem; }
 
@@ -588,13 +623,7 @@ exhibit-toggle:focus-visible {
   cursor: grabbing;
 }
 
-.lb-media-wrapper.natural {
-  /* Natural: image at original pixel size; scrollbars if larger */
-}
-
-.lb-media-wrapper.zoom {
-  /* Zoom: we scale the image; wrapper still scrollable */
-}
+/* .lb-media-wrapper.natural and .lb-media-wrapper.zoom blocks removed (no declarations needed) */
 
 .lb-image {
   display: block;
@@ -610,9 +639,7 @@ exhibit-toggle:focus-visible {
   transition: transform .25s ease;
 }
 
-.lb-image.zoom {
-  /* transform applied inline via style attribute (scale) */
-}
+/* .lb-image.zoom styles applied inline via transform; no stylesheet declarations needed */
 
 .lb-hint {
   position: absolute;
@@ -719,10 +746,7 @@ exhibit-toggle:focus-visible {
   cursor: zoom-in;
 }
 
-.detail-card-media.zoomed {
-  transform: scale(2);
-  cursor: zoom-out;
-}
+/* legacy: .detail-card-media.zoomed used by older transform-based zoom; no longer used */
 
 .detail-card-body {
   padding: 1rem 1.1rem 1.25rem;
@@ -762,10 +786,7 @@ exhibit-toggle:focus-visible {
   transition: transform .2s ease;
 }
 
-.detail-card-media.zoomed {
-  transform: scale(1.12);
-  cursor: zoom-out;
-}
+/* legacy: .detail-card-media.zoomed (old scale); point-zoom now handled inline */
 
 .detail-card-media-wrap.zoom-active {
   /* Enable panning via scroll while keeping within the card */
@@ -778,6 +799,38 @@ exhibit-toggle:focus-visible {
 .detail-card-media-wrap.zoom-active.dragging {
   cursor: grabbing;
 }
+
+/* Zoom controls inside detail card */
+.detail-card-zoom-controls {
+  position: absolute;
+  top: .5rem;
+  right: .5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  background: rgba(0,0,0,.55);
+  color: #fff;
+  padding: .25rem .4rem;
+  border-radius: 8px;
+  backdrop-filter: blur(2px);
+  z-index: 2;
+}
+
+.detail-card-zoom-controls .zc-btn {
+  appearance: none;
+  border: 1px solid #ffffff55;
+  background: #ffffff22;
+  color: #fff;
+  width: 28px;
+  height: 28px;
+  line-height: 26px;
+  text-align: center;
+  border-radius: 6px;
+  font-size: 18px;
+  cursor: pointer;
+}
+.detail-card-zoom-controls .zc-btn:hover { background: #ffffff33; }
+.detail-card-zoom-controls .zc-level { font-size: .85rem; min-width: 44px; text-align: center; }
 
 /* Optional: limit gigantic images (safety) – comment out if you want 100% native size always */
 /*

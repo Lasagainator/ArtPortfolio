@@ -29,7 +29,7 @@ const withBase = (p) => {
   return `${import.meta.env.BASE_URL}${p.replace(/^\//, '')}`
 }
 
-export default function ArtworkCard({ artwork }) {
+export default function ArtworkCard({ artwork, variant = 'card' }) {
   const ctx = useLightbox()
   const detail = useDetailCard()
   const open = ctx && ctx.open
@@ -71,12 +71,8 @@ export default function ArtworkCard({ artwork }) {
     ? `https://www.youtube-nocookie.com/embed/${youTubeId}?rel=0&modestbranding=1`
     : null
 
-  return (
-    <article className="card col-4 col-12">
-      <div
-        className="artwork-clickable"
-        {...(!isYouTube ? interactiveProps : {})}
-      >
+  const mediaBlock = (
+      <div className="artwork-clickable" {...(!isYouTube ? interactiveProps : {})}>
         {isYouTube ? (
           <div
             style={{
@@ -121,6 +117,21 @@ export default function ArtworkCard({ artwork }) {
           />
         )}
       </div>
+  )
+
+  if (variant === 'tile') {
+    return (
+      <div className="masonry-item">
+        <div className="masonry-tile">
+          {mediaBlock}
+        </div>
+      </div>
+    )
+  }
+
+  return (
+    <article className="card col-4 col-12">
+      {mediaBlock}
       <div className="card-body">
         <h3 className="card-title">{artwork.title}</h3>
         <div className="card-meta">

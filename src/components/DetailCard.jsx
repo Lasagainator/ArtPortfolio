@@ -6,7 +6,9 @@ const withBase = (p) => /^https?:\/\//i.test(p || '') ? p : `${import.meta.env.B
 export function DetailCardProvider({ children }) {
   const [artwork, setArtwork] = useState(null)
   const [zoomed, setZoomed] = useState(false)
-  const [zoom, setZoom] = useState(1.6) // slightly gentler zoom multiplier
+  const [zoom, setZoom] = useState(1.05) // gentler default zoom
+  const minZoom = 1
+  const maxZoom = 3
 
   // refs for point-zoom and panning
   const wrapRef = useRef(null)
@@ -14,6 +16,21 @@ export function DetailCardProvider({ children }) {
   const baseSizeRef = useRef({ w: 0, h: 0 })
   const clickPctRef = useRef({ x: 0.5, y: 0.5 })
   const draggingRef = useRef({ dragging: false, x: 0, y: 0, sl: 0, st: 0 })
+
+  const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v))
+
+  // Adjust zoom and recentre to last recorded focal percentage
+  const applyZoom = useCallback((nextZoom) => {
+    const wrap = wrapRef.current
+    if (!wrap) return
+    const z = clamp(nextZoom, minZoom, maxZoom)
+    setZoom(z)
+    if (z <= 1.01) {
+      setZoomed(false)
+    } else {
+      setZoomed(true)
+    }
+  }, [])
 
   const open = useCallback((a) => {
     setArtwork(a)
@@ -66,6 +83,22 @@ export function DetailCardProvider({ children }) {
             <div
               className={`detail-card-media-wrap ${zoomed ? 'zoom-active' : ''}`}
               ref={wrapRef}
+              onWheel={(e) => {
+                if (!e.ctrlKey) return
+                e.preventDefault()
+                // Focus at cursor position
+                const img = imgRef.current
+                if (img) {
+                  const rect = img.getBoundingClientRect()
+                  const clickX = e.clientX - rect.left
+                  const clickY = e.clientY - rect.top
+                  const px = clamp(clickX / rect.width, 0, 1)
+                  const py = clamp(clickY / rect.height, 0, 1)
+                  clickPctRef.current = { x: px, y: py }
+                }
+                const factor = e.deltaY > 0 ? 0.9 : 1.1
+                applyZoom(zoom * factor)
+              }}
               onMouseDown={(e) => {
                 if (!zoomed) return
                 const wrap = wrapRef.current
@@ -134,6 +167,12 @@ export function DetailCardProvider({ children }) {
                   objectFit: 'unset',
                 } : undefined}
               />
+              {/* Zoom controls */}
+              <div className="detail-card-zoom-controls" onClick={(e) => e.stopPropagation()} onMouseDown={(e) => e.stopPropagation()}>
+                <button type="button" aria-label="Zoom out" className="zc-btn" onClick={() => applyZoom(zoom / 1.15)}>−</button>
+                <span className="zc-level" aria-hidden="true">{Math.round(zoom * 100)}%</span>
+                <button type="button" aria-label="Zoom in" className="zc-btn" onClick={() => applyZoom(zoom * 1.15)}>+</button>
+              </div>
             </div>
             <div className="detail-card-body">
               {artwork.title && <h3 className="detail-card-title">{artwork.title}</h3>}

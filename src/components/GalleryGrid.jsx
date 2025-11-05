@@ -26,7 +26,24 @@ export default function GalleryGrid({ items = [], exhibits }) {
     return Object.values(groups)
   }, [items, exhibits])
 
-  // No toggles; exhibits are always visible with masonry tiling
+  // Track open/closed state per exhibit (default: open)
+  const [openMap, setOpenMap] = useState({})
+  useEffect(() => {
+    setOpenMap(prev => {
+      const next = { ...prev }
+      // ensure keys for current exhibits
+      for (const ex of normalizedExhibits) {
+        if (!(ex.id in next)) next[ex.id] = true
+      }
+      // remove stale keys
+      Object.keys(next).forEach(k => {
+        if (!normalizedExhibits.some(ex => ex.id === k)) delete next[k]
+      })
+      return next
+    })
+  }, [normalizedExhibits])
+
+  const toggle = (id) => setOpenMap(m => ({ ...m, [id]: !m[id] }))
 
   if (!normalizedExhibits.length) {
     return (
@@ -39,15 +56,44 @@ export default function GalleryGrid({ items = [], exhibits }) {
   return (
     <section className="gallery-grid exhibits">
       {normalizedExhibits.map(exhibit => {
+        const isOpen = !openMap[exhibit.id]
+        const btnId = `exhibit-${exhibit.id}`
+        const panelId = `panel-${exhibit.id}`
         return (
           <div key={exhibit.id} className="exhibit">
-            <h2 className="exhibit-title" id={`exhibit-${exhibit.id}`}>{exhibit.title}</h2>
-            <div className="masonry" role="group" aria-labelledby={`exhibit-${exhibit.id}`}>
-              {exhibit.artworks.map((art, idx) => {
-                const stableMedia = art.image || art.youtube || ''
-                const key = art.id ? `${art.id}-${stableMedia}` : (stableMedia || `idx-${idx}`)
-                return <ArtworkCard key={key} artwork={art} variant="tile" />
-              })}
+            <h2 style={{ margin: 0 }}>
+              <button
+                id={btnId}
+                type="button"
+                className="exhibit-toggle"
+                aria-expanded={isOpen ? 'true' : 'false'}
+                aria-controls={panelId}
+                onClick={() => toggle(exhibit.id)}
+              >
+                <span className="exhibit-title">{exhibit.title}</span>
+                <span className="exhibit-arrow" aria-hidden="true">
+                  <svg className="arrow-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </button>
+            </h2>
+
+            <div
+              id={panelId}
+              className="exhibit-panel"
+              role="group"
+              aria-labelledby={btnId}
+              hidden={!isOpen}
+            >
+              <div className="masonry">
+                {exhibit.artworks.map((art, idx) => {
+                  const stableMedia = art.image || art.youtube || ''
+                  const key = art.id ? `${art.id}-${stableMedia}` : (stableMedia || `idx-${idx}`)
+                  return <ArtworkCard key={key} artwork={art} variant="tile" />
+                })}
+              </div>
             </div>
           </div>
         )

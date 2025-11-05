@@ -793,8 +793,9 @@ exhibit-toggle:focus-visible {
   /* Enable panning via scroll while keeping the image centered when smaller */
   overflow: auto;
   cursor: grab;
-  justify-content: center;
-  align-items: center;
+  /* FIX: anchor to top-left so the very top is reachable */
+  justify-content: flex-start;  /* was center */
+  align-items: flex-start;      /* was center */
 }
 
 .detail-card-media-wrap.zoom-active.dragging {

@@ -1,97 +1,6 @@
 [
   {
     "id": "1",
-    "title": "Manipulation",
-    "year": "2023",
-    "medium": "Digital",
-    "size": "18 × 24 in",
-    "image": "/assets/Website/DigitalArt/4.jpg",
-    "exhibit": "Digital Art",
-    "description": "filler."
-  },
-  {
-    "id": "2",
-    "title": "Untitled II",
-    "year": "2024",
-    "medium": "Acrylic on panel",
-    "size": "16 × 20 in",
-    "image": "/assets/Website/DigitalArt/5.jpg",
-    "exhibit": "Digital Art"
-  },
-  {
-    "id": "3",
-    "title": "Untitled III",
-    "year": "2023",
-    "medium": "Charcoal on paper",
-    "size": "11 × 14 in",
-    "image": "/assets/Website/DigitalArt/6.jpg",
-    "exhibit": "Digital Art"
-  },
-  {
-    "id": "4",
-    "title": "Untitled IV",
-    "year": "2025",
-    "medium": "Mixed media",
-    "size": "24 × 36 in",
-    "image": "/assets/Website/DigitalArt/7.jpg",
-    "exhibit": "Digital Art"
-  },
-  {
-    "id": "5",
-    "title": "Untitled V",
-    "year": "2022",
-    "medium": "Photograph",
-    "size": "3000 × 2000 px",
-    "image": "/assets/Website/DigitalArt/8.jpg",
-    "exhibit": "Digital Art"
-  },
-  {
-    "id": "6",
-    "title": "Untitled VI",
-    "year": "2021",
-    "medium": "Digital",
-    "size": "1920 × 1080 px",
-    "image": "/assets/Website/DigitalArt/9.png",
-    "exhibit": "Digital Art"
-  },
-  {
-    "id": "7",
-    "title": "Untitled VII",
-    "year": "",
-    "medium": "",
-    "size": "",
-    "image": "/assets/Website/DigitalArt/art project.jpg",
-    "exhibit": "Digital Art"
-  },
-  {
-    "id": "8",
-    "title": "Untitled VIII",
-    "year": "",
-    "medium": "",
-    "size": "",
-    "image": "/assets/Website/DigitalArt/skdetch color.jpg",
-    "exhibit": "Digital Art"
-  },
-  {
-    "id": "9",
-    "title": "Untitled",
-    "year": "",
-    "medium": "",
-    "size": "",
-    "image": "/assets/Website/Edits/Blackburn_Corbin_Collage 01.jpg",
-    "exhibit": "Edits"
-  },
-  {
-    "id": "10",
-    "title": "Untitled",
-    "year": "",
-    "medium": "",
-    "size": "",
-    "image": "/assets/Website/Edits/houkagoteatimeVOL2.jpg",
-    "exhibit": "Edits"
-  },
-  {
-    "id": "11",
     "title": "Untitled",
     "year": "",
     "medium": "",
@@ -100,7 +9,7 @@
     "exhibit": "Posters"
   },
   {
-    "id": "12",
+    "id": "2",
     "title": "Untitled",
     "year": "",
     "medium": "",
@@ -109,7 +18,7 @@
     "exhibit": "Posters"
   },
   {
-    "id": "13",
+    "id": "3",
     "title": "Untitled",
     "year": "",
     "medium": "",
@@ -118,16 +27,7 @@
     "exhibit": "Posters"
   },
   {
-    "id": "15",
-    "title": "Untitled",
-    "year": "",
-    "medium": "",
-    "size": "",
-    "image": "/assets/Website/Posters/midwest poster.jpg",
-    "exhibit": "Posters"
-  },
-  {
-    "id": "16",
+    "id": "5",
     "title": "Untitled",
     "year": "",
     "medium": "",
@@ -136,16 +36,7 @@
     "exhibit": "Posters"
   },
   {
-    "id": "17",
-    "title": "Untitled",
-    "year": "",
-    "medium": "",
-    "size": "",
-    "image": "/assets/Website/Posters/PSA_Final.jpg",
-    "exhibit": "Posters"
-  },
-  {
-    "id": "18",
+    "id": "7",
     "title": "Untitled",
     "year": "",
     "medium": "",
@@ -154,120 +45,12 @@
     "exhibit": "Posters"
   },
   {
-    "id": "19",
-    "title": "Untitled",
-    "year": "",
-    "medium": "",
-    "size": "",
-    "image": "/assets/Website/Posters/section 7.jpg",
-    "exhibit": "Posters"
-  },
-  {
-    "id": "20",
+    "id": "9",
     "title": "Untitled",
     "year": "",
     "medium": "",
     "size": "",
     "image": "/assets/Website/Posters/Type II poster Final.jpg",
     "exhibit": "Posters"
-  },
-  {
-    "id": "21",
-    "title": "Untitled",
-    "year": "",
-    "medium": "",
-    "size": "",
-    "image": "/assets/Website/TraditionalArt/Tri/1.jpg",
-    "exhibit": "Traditional Art"
-  },
-  {
-    "id": "22",
-    "title": "Untitled",
-    "year": "",
-    "medium": "",
-    "size": "",
-    "image": "/assets/Website/TraditionalArt/Tri/2.jpg",
-    "exhibit": "Traditional Art"
-  },
-  {
-    "id": "23",
-    "title": "Untitled",
-    "year": "",
-    "medium": "",
-    "size": "",
-    "image": "/assets/Website/TraditionalArt/Tri/3.jpg",
-    "exhibit": "Traditional Art"
-  },
-  {
-    "id": "24",
-    "title": "Untitled",
-    "year": "",
-    "medium": "",
-    "size": "",
-    "image": "/assets/Website/TraditionalArt/Tri/set.jpg",
-    "exhibit": "Traditional Art"
-  },
-  {
-    "id": "25",
-    "title": "Untitled",
-    "year": "",
-    "medium": "",
-    "size": "",
-    "image": "/assets/Website/TraditionalArt/11.jpg",
-    "exhibit": "Traditional Art"
-  },
-  {
-    "id": "26",
-    "title": "Untitled",
-    "year": "",
-    "medium": "",
-    "size": "",
-    "image": "/assets/Website/TraditionalArt/12.jpg",
-    "exhibit": "Traditional Art"
-  },
-  {
-    "id": "26",
-    "title": "Untitled",
-    "year": "",
-    "medium": "",
-    "size": "",
-    "image": "/assets/Website/TraditionalArt/apple.jpg",
-    "exhibit": "Traditional Art"
-  },
-  {
-    "id": "27",
-    "title": "Untitled",
-    "year": "",
-    "medium": "",
-    "size": "",
-    "image": "/assets/Website/TraditionalArt/still life 3.jpg",
-    "exhibit": "Traditional Art"
-  },
-  {
-    "id": "28",
-    "title": "Untitled",
-    "year": "",
-    "medium": "",
-    "size": "",
-    "image": "/assets/Website/TraditionalArt/still life painting.jpg",
-    "exhibit": "Traditional Art"
-  },
-  {
-    "id": "29",
-    "title": "Untitled",
-    "year": "",
-    "medium": "",
-    "size": "",
-    "image": "/assets/Website/TraditionalArt/Still life.jpg",
-    "exhibit": "Traditional Art"
-  },
-  {
-    "id": "32",
-    "title": "Stop Motion Project",
-    "year": "",
-    "medium": "Video",
-    "size": "",
-    "youtube": "https://www.youtube.com/watch?v=kTU60AWDOF0",
-    "exhibit": "Video Projects"
   }
 ]

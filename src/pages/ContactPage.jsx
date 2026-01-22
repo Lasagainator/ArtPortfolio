@@ -6,12 +6,12 @@ export default function ContactPage() {
     <section style={{marginTop: '2rem'}}>
       <h2>Contact</h2>
       <p style={{maxWidth: 700}}>
-        Add your preferred contact method here: email, Instagram, or a contact form service.
-        This starter keeps things static. For forms, you can wire up services like Formspree later.
+        Feel free to reach out via email or connect on LinkedIn.
       </p>
       <ul>
-        <li>Email: <a href="mailto:artist@example.com">artist@example.com</a></li>
-        <li>Instagram: <a href="https://instagram.com/yourhandle" target="_blank" rel="noreferrer">@yourhandle</a></li>
+        <li>Email: <a href="mailto:corbinavb05@hotmail.com">corbinavb05@hotmail.com</a></li>
+        <li>Email: <a href="mailto:cblackburn@mica.edu">cblackburn@mica.edu</a></li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/corbin-blackburn/" target="_blank" rel="noreferrer">linkedin.com/in/corbin-blackburn</a></li>
       </ul>
     </section>
   )

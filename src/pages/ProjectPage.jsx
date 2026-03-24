@@ -124,6 +124,7 @@ export default function ProjectPage() {
     setLightboxPhoto(photos[newIndex])
   }
 
+  const base = (import.meta && import.meta.env && import.meta.env.BASE_URL) || '/'
   return (
     <div className="project-page-wrapper">
       <a href="#projects" className="pdf-back-link">← Back to Projects</a>
@@ -173,7 +174,7 @@ export default function ProjectPage() {
                 onClick={() => openLightbox(photos[0], 0)}
               >
                 <img 
-                  src={photos[0].image} 
+                  src={base + photos[0].image.replace(/^\//, '')} 
                   alt={photos[0].title}
                 />
               </div>
@@ -200,7 +201,7 @@ export default function ProjectPage() {
                         onClick={() => openLightbox(photo, originalIndex)}
                       >
                         <img 
-                          src={photo.image} 
+                          src={base + photo.image.replace(/^\//, '')} 
                           alt={photo.title}
                           loading="lazy"
                         />
@@ -223,7 +224,7 @@ export default function ProjectPage() {
                         onClick={() => openLightbox(photo, originalIndex)}
                       >
                         <img 
-                          src={photo.image} 
+                          src={base + photo.image.replace(/^\//, '')} 
                           alt={photo.title}
                           loading="lazy"
                         />
@@ -277,7 +278,7 @@ export default function ProjectPage() {
           <button className="lightbox-close" onClick={(e) => { e.stopPropagation(); closeLightbox() }}>×</button>
           <button className="lightbox-nav lightbox-prev" onClick={(e) => { e.stopPropagation(); goToPrev(e) }}>‹</button>
           <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
-            <img src={lightboxPhoto.image} alt={lightboxPhoto.title} />
+            <img src={base + lightboxPhoto.image.replace(/^\//, '')} alt={lightboxPhoto.title} />
             {lightboxPhoto.title && (
               <p className="lightbox-caption">{lightboxPhoto.title}</p>
             )}

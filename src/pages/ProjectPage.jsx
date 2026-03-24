@@ -30,10 +30,10 @@ export function getCategoryInfo() {
   const categoryMap = new Map()
   
   const customThumbnails = {
-    'Renegade Rizzlers Bowling': 'thumbnails/CBlackburn_RRBowling_Jerseys_Mockups.jpg',
-    'LiminaTraveler': 'thumbnails/CBlackburn_LiminaTraveler_CD_Mockup.jpg',
-    'The Haze': 'thumbnails/CBlackburn_TheHaze_Mockup.jpg',
-    'Nintendo Through Time': 'thumbnails/CBlackburn_ThroughTime_Logo.jpg',
+    'Renegade Rizzlers Bowling': 'assets/thumbnails/CBlackburn_RRBowling_Jerseys_Mockups.jpg',
+    'LiminaTraveler': 'assets/thumbnails/CBlackburn_LiminaTraveler_CD_Mockup.jpg',
+    'The Haze': 'assets/thumbnails/CBlackburn_TheHaze_Mockup.jpg',
+    'Nintendo Through Time': 'assets/thumbnails/CBlackburn_ThroughTime_Logo.jpg',
   }
 
   artworks.forEach(item => {

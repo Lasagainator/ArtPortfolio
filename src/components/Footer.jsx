@@ -5,8 +5,8 @@ export default function Footer() {
   const year = new Date().getFullYear()
   return (
     <footer className="footer">
-      <div className="container">
-        © {year} Corbin Blackburn • All rights reserved
+      <div className="container footer-content">
+        <span>© {year} Corbin Blackburn • All rights reserved</span>
       </div>
     </footer>
   )

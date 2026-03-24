@@ -1,0 +1,11 @@
+.auto-scroll-wrapper { 
+  width: 100vw; 
+  margin-left: calc(-50vw + 50%);
+  padding: 8px 0; 
+}
+.auto-scroll-container { overflow-x: auto; overflow-y: hidden; scrollbar-width: none; -ms-overflow-style: none; }
+.auto-scroll-container::-webkit-scrollbar { display: none; }
+.auto-scroll-track { display: flex; align-items: center; gap: var(--gap, 16px); width: max-content; }
+.auto-scroll-item { flex: 0 0 auto; }
+.auto-scroll-item img { display: block; height: var(--height, 160px); width: auto; object-fit: cover; user-select: none; pointer-events: none; }
+.auto-scroll-item video { display: block; height: var(--height, 160px); width: auto; object-fit: cover; user-select: none; pointer-events: none; }

@@ -1,56 +1,117 @@
 [
   {
-    "id": "1",
-    "title": "Untitled",
-    "year": "",
-    "medium": "",
-    "size": "",
-    "image": "/assets/Website/Posters/Complementary Opposites.jpg",
-    "exhibit": "Posters"
+    "id": "bowling-1",
+    "category": "Renegade Rizzlers Bowling",
+    "title": "Bird Logo",
+    "galleryDescription": "This project is a realization of a commissioned branding for a bowling team. Including mockup jerseys, logos, and typeface choices.",
+    "image": "/Bowling/CBlackburn_RRBowling_Bird_Logo.jpg"
   },
   {
-    "id": "2",
-    "title": "Untitled",
-    "year": "",
-    "medium": "",
-    "size": "",
-    "image": "/assets/Website/Posters/Fender Mustang final poster-01.jpg",
-    "exhibit": "Posters"
+    "id": "bowling-2",
+    "category": "Renegade Rizzlers Bowling",
+    "title": "Branding",
+    "galleryDescription": "This project is a realization of a commissioned branding for a bowling team. Including mockup jerseys, logos, and typeface choices.",
+    "image": "/Bowling/CBlackburn_RRBowling_Branding.png"
   },
   {
-    "id": "3",
-    "title": "Untitled",
-    "year": "",
-    "medium": "",
-    "size": "",
-    "image": "/assets/Website/Posters/KillEmAllVector.jpg",
-    "exhibit": "Posters"
+    "id": "bowling-3",
+    "category": "Renegade Rizzlers Bowling",
+    "title": "Jerseys Mockups",
+    "galleryDescription": "This project is a realization of a commissioned branding for a bowling team. Including mockup jerseys, logos, and typeface choices.",
+    "image": "/Bowling/CBlackburn_RRBowling_Jerseys_Mockups.jpg"
   },
   {
-    "id": "5",
-    "title": "Untitled",
-    "year": "",
-    "medium": "",
-    "size": "",
-    "image": "/assets/Website/Posters/Mtndewit yourself.jpg",
-    "exhibit": "Posters"
+    "id": "bowling-4",
+    "category": "Renegade Rizzlers Bowling",
+    "title": "LetterMark Logo",
+    "galleryDescription": "This project is a realization of a commissioned branding for a bowling team. Including mockup jerseys, logos, and typeface choices.",
+    "image": "/Bowling/CBlackburn_RRBowling_LetterMark_Logo.jpg"
   },
   {
-    "id": "7",
-    "title": "Untitled",
-    "year": "",
-    "medium": "",
-    "size": "",
-    "image": "/assets/Website/Posters/Ravens Poster.jpg",
-    "exhibit": "Posters"
+    "id": "bowling-5",
+    "category": "Renegade Rizzlers Bowling",
+    "title": "Shield Logo",
+    "galleryDescription": "This project is a realization of a commissioned branding for a bowling team. Including mockup jerseys, logos, and typeface choices.",
+    "image": "/Bowling/CBlackburn_RRBowling_Shield_Logo.jpg"
+  },
+
+  {
+    "id": "limina-1",
+    "category": "LiminaTraveler",
+    "title": "Bridge Artwork",
+    "galleryDescription": "LiminaTraveler is a puzzle exploration game where you travel through these vasts and empty environments to find your way out.",
+    "image": "/Limina/CBlackburn_LiminaTraveler_Bridge_Artwork.jpg"
   },
   {
-    "id": "9",
-    "title": "Untitled",
-    "year": "",
-    "medium": "",
-    "size": "",
-    "image": "/assets/Website/Posters/Type II poster Final.jpg",
-    "exhibit": "Posters"
+    "id": "limina-2",
+    "category": "LiminaTraveler",
+    "title": "CD Mockup",
+    "galleryDescription": "LiminaTraveler is a puzzle exploration game where you travel through these vasts and empty environments to find your way out.",
+    "image": "/Limina/CBlackburn_LiminaTraveler_CD_Mockup.jpg"
+  },
+  {
+    "id": "limina-3",
+    "category": "LiminaTraveler",
+    "title": "House Artwork",
+    "galleryDescription": "LiminaTraveler is a puzzle exploration game where you travel through these vasts and empty environments to find your way out.",
+    "image": "/Limina/CBlackburn_LiminaTraveler_House_Artwork.jpg"
+  },
+  {
+    "id": "limina-4",
+    "category": "LiminaTraveler",
+    "title": "Logos",
+    "galleryDescription": "LiminaTraveler is a puzzle exploration game where you travel through these vasts and empty environments to find your way out.",
+    "image": "/Limina/CBlackburn_LiminaTraveler_Logos.jpg"
+  },
+
+  {
+    "category": "Logo",
+    "galleryDescription": "",
+    "image": "/Logo/CBlackburn_PortfolioLogo_BirdSolo_Black.png"
+  },
+  {
+    "category": "Logo",
+    "galleryDescription": "",
+    "image": "/Logo/CBlackburn_PortfolioLogo_BirdSolo_White.png"
+  },
+  {
+    "category": "Logo",
+    "galleryDescription": "",
+    "image": "/Logo/CBlackburn_PortfolioLogo_Black.png"
+  },
+  {
+    "category": "Logo",
+    "galleryDescription": "",
+    "image": "/Logo/CBlackburn_PortfolioLogo_White.png"
+  },
+
+  {
+    "id": "haze-1",
+    "category": "The Haze",
+    "title": "Mockup",
+    "galleryDescription": "The Haze is a horror movie that uses misty and dark environments to create dread in the viewer.",
+    "image": "/The Haze/CBlackburn_TheHaze_Mockup.jpg"
+  },
+  {
+    "id": "haze-2",
+    "category": "The Haze",
+    "title": "Poster",
+    "galleryDescription": "The Haze is a horror movie that uses misty and dark environments to create dread in the viewer.",
+    "image": "/The Haze/CBlackburn_TheHaze_Poster.jpg"
+  },
+
+  {
+    "id": "nintendo-1",
+    "category": "Nintendo Through Time",
+    "title": "Branding",
+    "galleryDescription": "Nintendo Through Time is a showcase and convention that celebrates the history of Nintendo and its community by featuring all of the company’s past consoles and providing a dedicated convention for people to that history.\nMy design is supposed to represent Nintendo and its style with a twist. Paying homage to the history and legacy.",
+    "image": "/Through Time/CBlackburn_ThroughTime_Branding.png"
+  },
+  {
+    "id": "nintendo-2",
+    "category": "Nintendo Through Time",
+    "title": "Logo",
+    "galleryDescription": "Nintendo Through Time is a showcase and convention that celebrates the history of Nintendo and its community by featuring all of the company’s past consoles and providing a dedicated convention for people to that history.\nMy design is supposed to represent Nintendo and its style with a twist. Paying homage to the history and legacy.",
+    "image": "/Through Time/CBlackburn_ThroughTime_Logo.jpg"
   }
 ]

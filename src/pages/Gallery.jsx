@@ -83,7 +83,7 @@ function ProjectGallery({ category, expanded, onClose }) {
                 onClick={() => openLightbox(photos[0], 0)}
               >
                 <img 
-                  src={photos[0].image} 
+                  src={(import.meta && import.meta.env && import.meta.env.BASE_URL ? import.meta.env.BASE_URL : '/') + photos[0].image.replace(/^\//, '')} 
                   alt={photos[0].title}
                 />
               </div>
@@ -108,7 +108,7 @@ function ProjectGallery({ category, expanded, onClose }) {
                         onClick={() => openLightbox(photo, originalIndex)}
                       >
                         <img 
-                          src={photo.image} 
+                          src={(import.meta && import.meta.env && import.meta.env.BASE_URL ? import.meta.env.BASE_URL : '/') + photo.image.replace(/^\//, '')} 
                           alt={photo.title}
                           loading="lazy"
                         />
@@ -131,7 +131,7 @@ function ProjectGallery({ category, expanded, onClose }) {
                         onClick={() => openLightbox(photo, originalIndex)}
                       >
                         <img 
-                          src={photo.image} 
+                          src={(import.meta && import.meta.env && import.meta.env.BASE_URL ? import.meta.env.BASE_URL : '/') + photo.image.replace(/^\//, '')} 
                           alt={photo.title}
                           loading="lazy"
                         />
@@ -178,7 +178,7 @@ function ProjectGallery({ category, expanded, onClose }) {
           <button className="lightbox-close" onClick={(e) => { e.stopPropagation(); closeLightbox() }}>×</button>
           <button className="lightbox-nav lightbox-prev" onClick={(e) => { e.stopPropagation(); goToPrev(e) }}>‹</button>
           <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
-            <img src={lightboxPhoto.image} alt={lightboxPhoto.title} />
+            <img src={(import.meta && import.meta.env && import.meta.env.BASE_URL ? import.meta.env.BASE_URL : '/') + lightboxPhoto.image.replace(/^\//, '')} alt={lightboxPhoto.title} />
             {lightboxPhoto.title && (
               <p className="lightbox-caption">{lightboxPhoto.title}</p>
             )}

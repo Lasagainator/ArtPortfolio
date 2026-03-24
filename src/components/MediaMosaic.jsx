@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import { getCategoryInfo } from '../pages/ProjectPage.jsx'
+import { asset } from '../utils/media.js'
 import './MediaMosaic.css'
 
 export default function MediaMosaic() {
   const categories = getCategoryInfo()
   const [expanded, setExpanded] = useState(null)
+  // Use shared asset() helper from utils
   return (
     <section className="media-mosaic">
       <div className="container">
@@ -27,7 +29,7 @@ export default function MediaMosaic() {
                   {category.thumbnail ? (
                     category.thumbnail.toLowerCase().endsWith('.mp4') ? (
                       <video 
-                        src={category.thumbnail} 
+                        src={asset(category.thumbnail)} 
                         autoPlay 
                         loop 
                         muted 
@@ -36,7 +38,7 @@ export default function MediaMosaic() {
                       />
                     ) : (
                       <img 
-                        src={category.thumbnail} 
+                        src={asset(category.thumbnail)} 
                         alt={category.title}
                         loading="lazy"
                       />

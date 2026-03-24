@@ -5,11 +5,11 @@ import AboutPage from './AboutPage.jsx'
 import ContactPage from './ContactPage.jsx'
 import artworks from '../data/artworks.json'
 import { getCategoryInfo, categoryToSlug } from './ProjectPage.jsx'
-import { isYouTube, toYouTubeEmbedUrl } from '../utils/media.js'
+import { isYouTube, toYouTubeEmbedUrl, asset } from '../utils/media.js'
 
 /* ─── Full-screen project gallery section ─── */
 function ProjectGallerySection({ category, onClose }) {
-  const base = (import.meta && import.meta.env && import.meta.env.BASE_URL) || '/'
+  // Use shared asset() helper for images
   const { title, items, galleryDescription } = category
   const videoItem = items.find(i => i.video || i.youtube || i.youtubeId)
   const photos = items.filter(i => !(i.video || i.youtube || i.youtubeId))
@@ -58,8 +58,8 @@ function ProjectGallerySection({ category, onClose }) {
                 const originalIndex = photos.indexOf(photo)
                 return (
                   <div key={photo.id} className="process-thumb" onClick={() => openLightbox(photo, originalIndex)}>
-                    <img src={photo.image} alt={photo.title} loading="lazy" />
-                  </div>
+                      <img src={asset(photo.image)} alt={photo.title} loading="lazy" />
+                    </div>
                 )
               })}
             </div>
@@ -79,7 +79,7 @@ function ProjectGallerySection({ category, onClose }) {
                     allowFullScreen
                   />
                 ) : (
-                  <video controls preload="metadata" playsInline poster={videoItem.poster || videoItem.image || undefined}>
+                  <video controls preload="metadata" playsInline poster={(videoItem.poster || videoItem.image) ? asset(videoItem.poster || videoItem.image) : undefined}>
                     <source src={videoItem.video} />
                   </video>
                 )}
@@ -90,7 +90,7 @@ function ProjectGallerySection({ category, onClose }) {
           {!hasVideo && photos.length > 0 && (
             <div className="pdf-hero-section">
               <div className="pdf-hero-photo" onClick={() => openLightbox(photos[0], 0)}>
-                <img src={photos[0].image} alt={photos[0].title} />
+                <img src={asset(photos[0].image)} alt={photos[0].title} />
               </div>
             </div>
           )}
@@ -114,7 +114,7 @@ function ProjectGallerySection({ category, onClose }) {
           <button className="lightbox-close" onClick={(e) => { e.stopPropagation(); closeLightbox() }}>×</button>
           <button className="lightbox-nav lightbox-prev" onClick={(e) => { e.stopPropagation(); goToPrev(e) }}>‹</button>
           <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
-            <img src={lightboxPhoto.image} alt={lightboxPhoto.title} />
+            <img src={asset(lightboxPhoto.image)} alt={lightboxPhoto.title} />
             {lightboxPhoto.title && <p className="lightbox-caption">{lightboxPhoto.title}</p>}
             {lightboxPhoto.subcaption && (
               <div className="lightbox-credits">
@@ -149,8 +149,8 @@ function SimpleGalleryGrid({ onProjectClick }) {
   return (
     <div className="thumbnail-grid">
       {thumbnails.map(item => {
-        const src = `${base}${item.image.replace(/^\//, '')}`
-        const isVideo = /\.mp4$/i.test(src)
+      const src = asset(item.image)
+      const isVideo = /\.mp4$/i.test(item.image)
 
         return (
           <div key={item.id} className="thumbnail-card"

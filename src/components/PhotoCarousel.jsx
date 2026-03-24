@@ -1,4 +1,5 @@
 import React, { useState, useMemo, useCallback } from 'react'
+import { asset } from '../utils/media.js'
 
 export default function PhotoCarousel({ items = [] }) {
   const photos = useMemo(() => items.filter(i => i && i.image), [items])
@@ -78,7 +79,7 @@ export default function PhotoCarousel({ items = [] }) {
       }}
     >
       <img
-        src={photos[idx].image}
+        src={asset(photos[idx].image)}
         alt={photos[idx].title || 'Artwork image thumbnail'}
         loading="lazy"
         style={{ width: 72, height: 56, objectFit: 'cover', display: 'block' }}
@@ -105,7 +106,7 @@ export default function PhotoCarousel({ items = [] }) {
         </button>
         <div style={{ flex: 1 }}>
           <img
-            src={current.image}
+            src={asset(current.image)}
             alt={current.title || 'Artwork image'}
             loading="lazy"
             style={{ maxHeight: '75vh', width: 'auto', maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto', objectFit: 'contain' }}

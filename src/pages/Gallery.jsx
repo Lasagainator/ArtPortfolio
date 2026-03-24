@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect } from 'react'
 import { createPortal } from 'react-dom'
 import { getCategoryInfo } from './ProjectPage.jsx'
 import './Gallery.css'
-import { isYouTube, toYouTubeEmbedUrl } from '../utils/media.js'
+import { isYouTube, toYouTubeEmbedUrl, asset } from '../utils/media.js'
 
 function ProjectGallery({ category, expanded, onClose }) {
   // Inline the main content from ProjectPage, but without router links
@@ -59,20 +59,13 @@ function ProjectGallery({ category, expanded, onClose }) {
                     controls
                     preload="metadata"
                     playsInline
-                    poster={videoItem.poster || videoItem.image || undefined}
+                    poster={(videoItem.poster || videoItem.image) ? asset(videoItem.poster || videoItem.image) : undefined}
                   >
                     <source src={videoItem.video} />
                     Your browser does not support the video tag.
                   </video>
                 )}
               </div>
-              <div className="pdf-video-info">
-                <h3 className="pdf-video-title">{videoItem.title}</h3>
-                <div className="pdf-video-meta">
-                  {(videoItem.year || '') + 
-                   (videoItem.medium ? (videoItem.year ? ' • ' : '') + videoItem.medium : '') + 
-                   (videoItem.size ? ' • ' + videoItem.size : '')}
-                </div>
               </div>
             </div>
           )}
@@ -83,7 +76,7 @@ function ProjectGallery({ category, expanded, onClose }) {
                 onClick={() => openLightbox(photos[0], 0)}
               >
                 <img 
-                  src={(import.meta && import.meta.env && import.meta.env.BASE_URL ? import.meta.env.BASE_URL : '/') + photos[0].image.replace(/^\//, '')} 
+                  src={asset(photos[0].image)} 
                   alt={photos[0].title}
                 />
               </div>
@@ -108,7 +101,7 @@ function ProjectGallery({ category, expanded, onClose }) {
                         onClick={() => openLightbox(photo, originalIndex)}
                       >
                         <img 
-                          src={(import.meta && import.meta.env && import.meta.env.BASE_URL ? import.meta.env.BASE_URL : '/') + photo.image.replace(/^\//, '')} 
+                          src={asset(photo.image)} 
                           alt={photo.title}
                           loading="lazy"
                         />
@@ -131,7 +124,7 @@ function ProjectGallery({ category, expanded, onClose }) {
                         onClick={() => openLightbox(photo, originalIndex)}
                       >
                         <img 
-                          src={(import.meta && import.meta.env && import.meta.env.BASE_URL ? import.meta.env.BASE_URL : '/') + photo.image.replace(/^\//, '')} 
+                          src={asset(photo.image)} 
                           alt={photo.title}
                           loading="lazy"
                         />
@@ -178,7 +171,7 @@ function ProjectGallery({ category, expanded, onClose }) {
           <button className="lightbox-close" onClick={(e) => { e.stopPropagation(); closeLightbox() }}>×</button>
           <button className="lightbox-nav lightbox-prev" onClick={(e) => { e.stopPropagation(); goToPrev(e) }}>‹</button>
           <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
-            <img src={(import.meta && import.meta.env && import.meta.env.BASE_URL ? import.meta.env.BASE_URL : '/') + lightboxPhoto.image.replace(/^\//, '')} alt={lightboxPhoto.title} />
+            <img src={asset(lightboxPhoto.image)} alt={lightboxPhoto.title} />
             {lightboxPhoto.title && (
               <p className="lightbox-caption">{lightboxPhoto.title}</p>
             )}
@@ -255,9 +248,9 @@ export default function Gallery() {
                 role="button"
               >
                 {category.thumbnail ? (
-                  category.thumbnail.toLowerCase().endsWith('.mp4') ? (
+                    category.thumbnail.toLowerCase().endsWith('.mp4') ? (
                     <video 
-                      src={category.thumbnail} 
+                      src={asset(category.thumbnail)} 
                       autoPlay 
                       loop 
                       muted 
@@ -266,7 +259,7 @@ export default function Gallery() {
                     />
                   ) : (
                     <img 
-                      src={category.thumbnail} 
+                      src={asset(category.thumbnail)} 
                       alt={category.title}
                       loading="lazy"
                     />

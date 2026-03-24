@@ -1,5 +1,5 @@
 import React from 'react'
-import { isYouTube, toYouTubeEmbedUrl } from '../utils/media.js'
+import { isYouTube, toYouTubeEmbedUrl, asset } from '../utils/media.js'
 
 // Helper to set correct MIME type for the <source> tag
 function guessMime(src = '') {
@@ -27,20 +27,20 @@ export default function ArtworkCard({ artwork }) {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
           />
-        ) : (
+          ) : (
           <video
             controls
             preload="metadata"
             playsInline
-            poster={artwork.poster || artwork.image || undefined}
+            poster={(artwork.poster || artwork.image) ? asset(artwork.poster || artwork.image) : undefined}
             style={{ width: '100%', display: 'block', background: '#000' }}
           >
             <source src={artwork.video} type={guessMime(artwork.video)} />
             Your browser does not support the video tag.
           </video>
         )
-      ) : (
-        <img src={artwork.image} alt={artwork.title} loading="lazy" />
+          ) : (
+        <img src={asset(artwork.image)} alt={artwork.title} loading="lazy" />
       )}
       <div className="card-body">
         <h3 className="card-title">{artwork.title}</h3>

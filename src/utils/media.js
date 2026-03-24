@@ -43,3 +43,9 @@ export function toYouTubeEmbedUrl(input) {
   const id = getYouTubeId(input)
   return id ? `https://www.youtube-nocookie.com/embed/${id}` : null
 }
+
+// Return a normalized public asset URL that respects Vite's base URL
+export function asset(path) {
+  const base = ((import.meta && import.meta.env && import.meta.env.BASE_URL) || '/').replace(/\/?$/, '/');
+  return path ? base + 'assets/' + path.replace(/^\/?assets\/?/, '').replace(/^\//, '') : ''
+}

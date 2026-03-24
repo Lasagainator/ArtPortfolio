@@ -2,7 +2,7 @@ import React, { useMemo, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { useParams } from 'react-router-dom'
 import artworks from '../data/artworks.json'
-import { isYouTube, toYouTubeEmbedUrl } from '../utils/media.js'
+import { isYouTube, toYouTubeEmbedUrl, asset } from '../utils/media.js'
 import './ProjectPage.css'
 
 // Convert category to URL-friendly slug
@@ -30,10 +30,10 @@ export function getCategoryInfo() {
   const categoryMap = new Map()
   
   const customThumbnails = {
-    'Renegade Rizzlers Bowling': 'assets/thumbnails/CBlackburn_RRBowling_Jerseys_Mockups.jpg',
-    'LiminaTraveler': 'assets/thumbnails/CBlackburn_LiminaTraveler_CD_Mockup.jpg',
-    'The Haze': 'assets/thumbnails/CBlackburn_TheHaze_Mockup.jpg',
-    'Nintendo Through Time': 'assets/thumbnails/CBlackburn_ThroughTime_Logo.jpg',
+    'Renegade Rizzlers Bowling': 'thumbnails/CBlackburn_RRBowling_Jerseys_Mockups.jpg',
+    'LiminaTraveler': 'thumbnails/CBlackburn_LiminaTraveler_CD_Mockup.jpg',
+    'The Haze': 'thumbnails/CBlackburn_TheHaze_Mockup.jpg',
+    'Nintendo Through Time': 'thumbnails/CBlackburn_ThroughTime_Logo.jpg',
   }
 
   artworks.forEach(item => {
@@ -124,7 +124,7 @@ export default function ProjectPage() {
     setLightboxPhoto(photos[newIndex])
   }
 
-  const base = (import.meta && import.meta.env && import.meta.env.BASE_URL) || '/'
+  // Use shared asset() helper from utils
   return (
     <div className="project-page-wrapper">
       <a href="#projects" className="pdf-back-link">← Back to Projects</a>
@@ -148,7 +148,7 @@ export default function ProjectPage() {
                     controls
                     preload="metadata"
                     playsInline
-                    poster={videoItem.poster || videoItem.image || undefined}
+                    poster={(videoItem.poster || videoItem.image) ? asset(videoItem.poster || videoItem.image) : undefined}
                   >
                     <source src={videoItem.video} />
                     Your browser does not support the video tag.
@@ -174,7 +174,7 @@ export default function ProjectPage() {
                 onClick={() => openLightbox(photos[0], 0)}
               >
                 <img 
-                  src={base + photos[0].image.replace(/^\//, '')} 
+                  src={asset(photos[0].image)} 
                   alt={photos[0].title}
                 />
               </div>
@@ -201,7 +201,7 @@ export default function ProjectPage() {
                         onClick={() => openLightbox(photo, originalIndex)}
                       >
                         <img 
-                          src={base + photo.image.replace(/^\//, '')} 
+                          src={asset(photo.image)} 
                           alt={photo.title}
                           loading="lazy"
                         />
@@ -224,7 +224,7 @@ export default function ProjectPage() {
                         onClick={() => openLightbox(photo, originalIndex)}
                       >
                         <img 
-                          src={base + photo.image.replace(/^\//, '')} 
+                          src={asset(photo.image)} 
                           alt={photo.title}
                           loading="lazy"
                         />
@@ -278,7 +278,7 @@ export default function ProjectPage() {
           <button className="lightbox-close" onClick={(e) => { e.stopPropagation(); closeLightbox() }}>×</button>
           <button className="lightbox-nav lightbox-prev" onClick={(e) => { e.stopPropagation(); goToPrev(e) }}>‹</button>
           <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
-            <img src={base + lightboxPhoto.image.replace(/^\//, '')} alt={lightboxPhoto.title} />
+            <img src={asset(lightboxPhoto.image)} alt={lightboxPhoto.title} />
             {lightboxPhoto.title && (
               <p className="lightbox-caption">{lightboxPhoto.title}</p>
             )}
